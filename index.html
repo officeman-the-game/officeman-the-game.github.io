@@ -1,0 +1,137 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OFFICEMAN</title>
+      <link href='https://fonts.googleapis.com/css?family=Press+Start+2P' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="styles/main.css">
+  </head>
+  <body>
+		<div class="l-container">
+			<div class="l-content">
+				<header class="header">
+					<nav class="nav">
+						<ul class="navbar">
+							<li class="navbar__item"><a href="#about" class="navbar__link">About</a></li>	
+							<li class="navbar__item"><a href="https://github.com/primanator/Office-Man" class="navbar__link">Github</a></li>	
+							<li class="navbar__item"><a href="#contacts" class="navbar__link">Contact</a></li>
+						</ul>
+					</nav>
+				</header>
+				<section class="hero">
+					<div class="logo"></div>
+					<div class="intro">
+						<h1 class="intro__name">OFFICEMAN</h1>
+						<p class="intro__slogan">Where it all begins . . . or ends</p>
+						<a href="https://github.com/primanator/Office-Man" class="intro__button">Get it now</a>
+					</div>
+					<div class="star"><div class="star__light"></div></div>
+					<div class="star"><div class="star__light--down"></div></div>
+					<div class="star"><div class="star__light"></div></div>
+					<div class="star"><div class="star__light--down"></div></div>
+					<div class="star"><div class="star__light"></div></div>
+					<div class="star"><div class="star__light"></div></div>
+
+				</section>
+				<div class="falling-man" id="falling-man">
+					<div class="falling-man__img"></div>
+				</div>
+				<main class="main">
+					<section class="main-section what" id="about">
+						<h2 class="main-section__heading">What is this?</h2>
+						<p class="main-section__text">
+							<strong> officeman </strong> is 2d Win Forms <br> suicide game
+						</p>
+					</section>
+					<section class="main-section presentation">
+						<h2 class="main-section__heading">Where</h2>
+						<p class="main-section__text">
+							you play for <strong> the man </strong>
+						</p>
+					</section>
+					<section class="main-section story">
+						<h2 class="main-section__heading">Who</h2>
+						<p class="main-section__text">
+							wants to commit suicide .
+						</p>
+					</section>
+					<section class="main-section gameplay">
+						<h2 class="main-section__heading">Falling, </h2>
+						<p class="main-section__text">
+							you can collect various<br> items  to continue flying<br> as long as you can
+						</p>
+					</section>
+					<section class="main-section objective">
+						<h2 class="main-section__heading">Points: </h2>
+						<p class="main-section__text">
+							The <strong> longer </strong> the fall,<br> the more points you get
+						</p>
+					</section>
+					<section class="main-section shop">
+						<h2 class="main-section__heading">Develop:  </h2>
+						<p class="main-section__text">
+							You can <strong> use </strong> these points<br>  to buy some cool staff<br>
+							 from the shop
+						</p>
+					</section>
+				</main>
+				<section class="contacts" id="contacts">
+					<div class="contact-info">
+						<h3 class="contact-info__heading">Questions, suggestions ?</h3>
+						<p class="contact-info__text">Feel free to contact us whenever you want :</p>
+						<div class="media-links">
+							<a href="https://www.facebook.com/leshaprimolenny" class="media-links__link">Lesha : 
+								<img src="img/fb.png" alt="" class="media-links__img">
+							</a>
+							<a href="https://www.facebook.com/lsbou1" class="media-links__link">Dima: 
+								<img src="img/fb.png" alt="" class="media-links__img">
+							</a>
+							<a href="https://github.com/primanator" class="media-links__link">Our Github : 
+								<img src="img/git.png" alt="" class="media-links__img">
+							</a>
+						</div>
+					</div>
+				</section>
+				<footer class="footer">
+					<div class="footer__copyright">OFFICEMAN <small>(c)</small></div>
+					<div class="footer__made-by">Made with love by 
+						<a href="https://github.com/shaggspeare" class="footer__author-link">Slava Stetsenko</a>
+					</div>
+				</footer>
+			</div>
+		</div>
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+		<script>
+            $(document).ready(function(){
+
+                $("a").on('click', function(event) {
+                    if (this.hash !== "") {
+                        event.preventDefault();
+
+                        var hash = this.hash;
+
+                        $('html, body').animate({
+                            scrollTop: $(hash).offset().top
+                        }, 1000, function(){
+                            window.location.hash = hash;
+                        });
+                    } // End if
+                });
+
+                $(window).scroll(function() {
+                    var scroll = $(window).scrollTop();
+                    var wh = $(window).height();
+                    if (scroll <= wh - 70) {
+                        $("#falling-man").fadeOut(200);
+                    }
+                    else{
+                        $("#falling-man").fadeIn(600);
+                    }
+                });
+            });
+        </script>
+  </body>
+</html>
