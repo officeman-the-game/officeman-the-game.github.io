@@ -4,6 +4,9 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="icon"
+            type="image/png"
+            href="case2.ico">
     <title>OFFICEMAN</title>
       <link href='https://fonts.googleapis.com/css?family=Press+Start+2P' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="styles/main.css">
@@ -85,7 +88,7 @@
 							<a href="https://www.facebook.com/leshaprimolenny" class="media-links__link">Lesha : 
 								<img src="img/fb.png" alt="" class="media-links__img">
 							</a>
-							<a href="https://www.facebook.com/lsbou1" class="media-links__link">Dima: 
+							<a href="https://www.facebook.com/lsbou1" class="media-links__link">LopSbou:
 								<img src="img/fb.png" alt="" class="media-links__img">
 							</a>
 							<a href="https://github.com/primanator" class="media-links__link">Our Github : 
@@ -124,11 +127,13 @@
                 $(window).scroll(function() {
                     var scroll = $(window).scrollTop();
                     var wh = $(window).height();
-                    if (scroll <= wh - 70) {
-                        $("#falling-man").fadeOut(200);
+                    var docHeight = Math.max($(document).height(), wh);
+
+                    if (scroll <= wh - 70 || scroll >= docHeight - 860) {
+                        $("#falling-man").fadeOut(300);
                     }
                     else{
-                        $("#falling-man").fadeIn(600);
+                        $("#falling-man").fadeIn(500);
                     }
                 });
             });
